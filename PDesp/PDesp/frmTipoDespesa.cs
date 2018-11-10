@@ -25,7 +25,6 @@ namespace PDesp
 
         private void frmTipoDespesa_Load(object sender, EventArgs e)
         {
-
             try
             {
                 TipoDespesa tipoDespesa = new TipoDespesa();
@@ -36,6 +35,8 @@ namespace PDesp
 
                 txtId.DataBindings.Add("TEXT", bnTipoDespesa, "ID_TIPODESPESA");
                 txtNomeTipoDespesa.DataBindings.Add("TEXT", bnTipoDespesa, "NOME_TIPODESPESA");
+                dgvTipoDespesa.Columns[0].HeaderText = "ID";
+                dgvTipoDespesa.Columns[1].HeaderText = "Nome";
             }
             catch (Exception ex)
             {
@@ -66,33 +67,30 @@ namespace PDesp
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            //if (TabControl1.SelectedIndex == 0)
-            //{
-            //    TabControl1.SelectTab(1);
-            //}
+            if (tbTipoDespesa.SelectedIndex == 0)
+            {
+                tbTipoDespesa.SelectTab(1);
+            }
 
+            if (MessageBox.Show("Confirma exclusão?", "Yes or No", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+            {
+                TipoDespesa regTD = new TipoDespesa();
 
-            //if (MessageBox.Show("Confirma exclusão?", "Yes or No", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
-            //{
-            //    Cidade RegCid = new Cidade();
+                regTD.IdTipoDespesa = Convert.ToInt16(txtId.Text);
+                regTD.NomeDespesa = txtNomeTipoDespesa.Text;
 
-            //    RegCid.Idcidade = Convert.ToInt16(txtId.Text);
-            //    RegCid.Nomecidade = txtNomeCidade.Text;
-            //    RegCid.Ufcidade = cbxEstado.SelectedItem.ToString();
-
-            //    if (RegCid.Excluir() > 0)
-            //    {
-            //        MessageBox.Show("Cidade excluída com sucesso!");
-            //        Cidade R = new Cidade();
-            //        dsTipoDesesa.Tables.Clear();
-            //        dsTipoDesesa.Tables.Add(R.Listar());
-            //        bnTipoDespesa.DataSource = dsTipoDesesa.Tables["TBCidade"];
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Erro ao excluir cidade!");
-            //    }
-            //}
+                if (regTD.Excluir() > 0)
+                {
+                    MessageBox.Show("Tipo de despesa excluída com sucesso!");
+                    dsTipoDesesa.Tables.Clear();
+                    dsTipoDesesa.Tables.Add(regTD.Listar());
+                    bnTipoDespesa.DataSource = dsTipoDesesa.Tables["TIPODESPESA"];
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao excluir tipo da despesa!");
+                }
+            }
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -164,33 +162,30 @@ namespace PDesp
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            //if (TabControl1.SelectedIndex == 0)
-            //{
-            //    TabControl1.SelectTab(1);
-            //}
+            if (tbTipoDespesa.SelectedIndex == 0)
+            {
+                tbTipoDespesa.SelectTab(1);
+            }
 
-            //txtNomeCidade.Enabled = true;
-            //cbxEstado.Enabled = true;
-            //txtNomeCidade.Focus();
-            //btnSalvar.Enabled = true;
-            //btnAlterar.Enabled = false;
-            //btnNovoRegistro.Enabled = false;
-            //btnExcluir.Enabled = false;
-            //btnCancelar.Enabled = true;
-            //bInclusao = false;
+            txtNomeTipoDespesa.Enabled = true;
+            txtNomeTipoDespesa.Focus();
+            btnSalvar.Enabled = true;
+            btnAlterar.Enabled = false;
+            btnNovoRegistro.Enabled = false;
+            btnExcluir.Enabled = false;
+            btnCancelar.Enabled = true;
+            bInclusao = false;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            bnTipoDespesa.CancelEdit();
 
-            //bnTipoDespesa.CancelEdit();
-
-            //btnSalvar.Enabled = false;
-            //txtNomeCidade.Enabled = false;
-            //cbxEstado.Enabled = false;
-            //btnAlterar.Enabled = true;
-            //btnNovoRegistro.Enabled = true;
-            //btnExcluir.Enabled = true;
+            btnSalvar.Enabled = false;
+            txtNomeTipoDespesa.Enabled = false;
+            btnAlterar.Enabled = true;
+            btnNovoRegistro.Enabled = true;
+            btnExcluir.Enabled = true;
         }
 
         private void btnSair_Click(object sender, EventArgs e)

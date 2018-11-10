@@ -59,9 +59,7 @@ namespace PDesp
                 int nReg;
 
                 mycommand = new SqlCommand("INSERT INTO TIPODESPESA VALUES (@NOME_TIPODESPESA)", frmPrincipal.conexao);
-
-                mycommand.Parameters.Add(new SqlParameter("@NOME_TIPODESPESA", SqlDbType.VarChar)); ;
-
+                mycommand.Parameters.Add(new SqlParameter("@NOME_TIPODESPESA", SqlDbType.VarChar));
                 mycommand.Parameters["@NOME_TIPODESPESA"].Value = nomeDespesa;
 
                 nReg = mycommand.ExecuteNonQuery();
@@ -91,9 +89,9 @@ namespace PDesp
                 int nReg = 0;
                 mycommand = new SqlCommand("UPDATE TIPODESPESA SET NOME_TIPODESPESA = @NOME_TIPODESPESA WHERE ID_TIPODESPESA = @ID_TIPODESPESA", frmPrincipal.conexao);
 
-                mycommand.Parameters.Add(new SqlParameter("@NOME_TIPODESPESA", SqlDbType.Int));
-
+                mycommand.Parameters.Add(new SqlParameter("@NOME_TIPODESPESA", SqlDbType.VarChar));
                 mycommand.Parameters["@NOME_TIPODESPESA"].Value = nomeDespesa;
+                mycommand.Parameters.Add(new SqlParameter("@ID_TIPODESPESA", SqlDbType.Int));
                 mycommand.Parameters["@ID_TIPODESPESA"].Value = idTipoDespesa;
 
                 nReg = mycommand.ExecuteNonQuery();
@@ -140,18 +138,10 @@ namespace PDesp
             try
             {
                 SqlCommand mycommand;
-                SqlDataReader reader = null;
-
                 mycommand = new SqlCommand("SELECT IDENT_CURRENT('TIPODESPESA') + IDENT_INCR('TIPODESPESA') AS NEXT_IDENTIFIER", frmPrincipal.conexao);
 
                 // Executando o commando e obtendo o resultado
-                reader = mycommand.ExecuteReader();
-
-                // Exibindo os registros
-                while (reader.Read())
-                {
-                    nextIdentifier = reader.GetInt32(0);
-                }
+                nextIdentifier = Convert.ToInt32(mycommand.ExecuteScalar());
             }
 
             catch (Exception ex)

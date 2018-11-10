@@ -25,9 +25,9 @@ namespace PDesp
         {
             try
             {
-                //conexao = new SqlConnection("Data Source=apolo;Persist Security Info=True;User ID=bd1813003;Password=********");
+                conexao = new SqlConnection("Data Source=DESKTOP-PKET4KJ;Initial Catalog=master;Integrated Security=True");
                 //conexao = new SqlConnection("Data Source=PROFDENILCE"+"'\'"+"SQLEXPRESS;Initial Catalog=LP2;Integrated Security=True");
-                conexao = new SqlConnection("Data Source=apolo;Initial Catalog=LP2;User ID=bd1813003;Password=060588Vi"); 
+                //conexao = new SqlConnection("Data Source=apolo;Initial Catalog=LP2;User ID=bd1813003;Password=060588Vi"); 
                 conexao.Open();
             }
             catch (SqlException ex)
