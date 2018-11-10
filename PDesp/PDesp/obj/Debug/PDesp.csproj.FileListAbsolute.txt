@@ -27,3 +27,4 @@ C:\Users\victorbaleeiro\Documents\pdesp\PDesp\PDesp\obj\Debug\PDesp.frmTipoDespe
 C:\Users\victorbaleeiro\Documents\pdesp\PDesp\PDesp\obj\Debug\PDesp.frmPrincipal.resources
 C:\Users\victorbaleeiro\Documents\pdesp\PDesp\PDesp\obj\Debug\PDesp.Properties.Resources.resources
 C:\Users\victorbaleeiro\Documents\pdesp\PDesp\PDesp\obj\Debug\PDesp.csproj.GenerateResource.Cache
+C:\Users\victorbaleeiro\Documents\pdesp\PDesp\PDesp\obj\Debug\PDesp.frmMembro.resources

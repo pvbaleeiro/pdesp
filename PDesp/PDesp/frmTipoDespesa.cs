@@ -192,16 +192,5 @@ namespace PDesp
         {
             this.Close();
         }
-
-        private void dgvTipoDespesa_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void bnvTipoDespesa_RefreshItems(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }

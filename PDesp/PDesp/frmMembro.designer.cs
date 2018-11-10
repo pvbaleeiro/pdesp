@@ -1,6 +1,6 @@
 ﻿namespace PDesp
 {
-    partial class frmTipoDespesa
+    partial class frmMembro
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTipoDespesa));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMembro));
             this.btnSair = new System.Windows.Forms.ToolStripButton();
             this.btnAlterar = new System.Windows.Forms.ToolStripButton();
             this.btnSalvar = new System.Windows.Forms.ToolStripButton();
@@ -44,22 +44,24 @@
             this.BindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.BindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.BindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bnvTipoDespesa = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bnvMembro = new System.Windows.Forms.BindingNavigator(this.components);
             this.btnCancelar = new System.Windows.Forms.ToolStripButton();
-            this.txtNomeTipoDespesa = new System.Windows.Forms.TextBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
             this.txtId = new System.Windows.Forms.TextBox();
-            this.lblNomeTipoDespesa = new System.Windows.Forms.Label();
+            this.lblPapel = new System.Windows.Forms.Label();
+            this.lblNome = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
             this.Dados = new System.Windows.Forms.TabPage();
-            this.dgvTipoDespesa = new System.Windows.Forms.DataGridView();
+            this.dgvMembro = new System.Windows.Forms.DataGridView();
             this.Detalhes = new System.Windows.Forms.TabPage();
-            this.tbTipoDespesa = new System.Windows.Forms.TabControl();
-            ((System.ComponentModel.ISupportInitialize)(this.bnvTipoDespesa)).BeginInit();
-            this.bnvTipoDespesa.SuspendLayout();
+            this.tbMembro = new System.Windows.Forms.TabControl();
+            this.txtPapel = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.bnvMembro)).BeginInit();
+            this.bnvMembro.SuspendLayout();
             this.Dados.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTipoDespesa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMembro)).BeginInit();
             this.Detalhes.SuspendLayout();
-            this.tbTipoDespesa.SuspendLayout();
+            this.tbMembro.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSair
@@ -68,7 +70,7 @@
             this.btnSair.Image = ((System.Drawing.Image)(resources.GetObject("btnSair.Image")));
             this.btnSair.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(28, 28);
+            this.btnSair.Size = new System.Drawing.Size(28, 36);
             this.btnSair.Text = "Sair";
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
@@ -78,7 +80,7 @@
             this.btnAlterar.Image = ((System.Drawing.Image)(resources.GetObject("btnAlterar.Image")));
             this.btnAlterar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(28, 28);
+            this.btnAlterar.Size = new System.Drawing.Size(28, 36);
             this.btnAlterar.Text = "Alterar Registro";
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
@@ -89,7 +91,7 @@
             this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
             this.btnSalvar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(28, 28);
+            this.btnSalvar.Size = new System.Drawing.Size(28, 36);
             this.btnSalvar.Text = "Salvar Registros";
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
@@ -99,7 +101,7 @@
             this.btnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluir.Image")));
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.RightToLeftAutoMirrorImage = true;
-            this.btnExcluir.Size = new System.Drawing.Size(28, 28);
+            this.btnExcluir.Size = new System.Drawing.Size(28, 36);
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
@@ -109,14 +111,14 @@
             this.btnNovoRegistro.Image = ((System.Drawing.Image)(resources.GetObject("btnNovoRegistro.Image")));
             this.btnNovoRegistro.Name = "btnNovoRegistro";
             this.btnNovoRegistro.RightToLeftAutoMirrorImage = true;
-            this.btnNovoRegistro.Size = new System.Drawing.Size(28, 28);
+            this.btnNovoRegistro.Size = new System.Drawing.Size(28, 36);
             this.btnNovoRegistro.Text = "Adicionar Novo Registro";
             this.btnNovoRegistro.Click += new System.EventHandler(this.btnNovoRegistro_Click);
             // 
             // BindingNavigatorSeparator2
             // 
             this.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2";
-            this.BindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 31);
+            this.BindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 39);
             // 
             // BindingNavigatorMoveLastItem
             // 
@@ -124,7 +126,7 @@
             this.BindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("BindingNavigatorMoveLastItem.Image")));
             this.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem";
             this.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.BindingNavigatorMoveLastItem.Size = new System.Drawing.Size(28, 28);
+            this.BindingNavigatorMoveLastItem.Size = new System.Drawing.Size(28, 36);
             this.BindingNavigatorMoveLastItem.Text = "Último Registro";
             // 
             // BindingNavigatorMoveNextItem
@@ -133,27 +135,27 @@
             this.BindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("BindingNavigatorMoveNextItem.Image")));
             this.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem";
             this.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.BindingNavigatorMoveNextItem.Size = new System.Drawing.Size(28, 28);
+            this.BindingNavigatorMoveNextItem.Size = new System.Drawing.Size(28, 36);
             this.BindingNavigatorMoveNextItem.Text = "Próximo registro";
             // 
             // BindingNavigatorSeparator1
             // 
             this.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1";
-            this.BindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 31);
+            this.BindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 39);
             // 
             // BindingNavigatorPositionItem
             // 
             this.BindingNavigatorPositionItem.AccessibleName = "Position";
             this.BindingNavigatorPositionItem.AutoSize = false;
             this.BindingNavigatorPositionItem.Name = "BindingNavigatorPositionItem";
-            this.BindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.BindingNavigatorPositionItem.Size = new System.Drawing.Size(96, 39);
             this.BindingNavigatorPositionItem.Text = "0";
             this.BindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
             // BindingNavigatorSeparator
             // 
             this.BindingNavigatorSeparator.Name = "BindingNavigatorSeparator";
-            this.BindingNavigatorSeparator.Size = new System.Drawing.Size(6, 31);
+            this.BindingNavigatorSeparator.Size = new System.Drawing.Size(6, 39);
             // 
             // BindingNavigatorMovePreviousItem
             // 
@@ -161,7 +163,7 @@
             this.BindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("BindingNavigatorMovePreviousItem.Image")));
             this.BindingNavigatorMovePreviousItem.Name = "BindingNavigatorMovePreviousItem";
             this.BindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.BindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(28, 28);
+            this.BindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(28, 36);
             this.BindingNavigatorMovePreviousItem.Text = "Registro anterior";
             // 
             // BindingNavigatorMoveFirstItem
@@ -170,24 +172,24 @@
             this.BindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("BindingNavigatorMoveFirstItem.Image")));
             this.BindingNavigatorMoveFirstItem.Name = "BindingNavigatorMoveFirstItem";
             this.BindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.BindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(28, 28);
+            this.BindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(28, 36);
             this.BindingNavigatorMoveFirstItem.Text = "Primeiro registro";
             // 
             // BindingNavigatorCountItem
             // 
             this.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem";
-            this.BindingNavigatorCountItem.Size = new System.Drawing.Size(37, 28);
+            this.BindingNavigatorCountItem.Size = new System.Drawing.Size(76, 36);
             this.BindingNavigatorCountItem.Text = "de {0}";
             this.BindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
-            // bnvTipoDespesa
+            // bnvMembro
             // 
-            this.bnvTipoDespesa.AddNewItem = null;
-            this.bnvTipoDespesa.CountItem = this.BindingNavigatorCountItem;
-            this.bnvTipoDespesa.CountItemFormat = "de {0}";
-            this.bnvTipoDespesa.DeleteItem = null;
-            this.bnvTipoDespesa.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.bnvTipoDespesa.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bnvMembro.AddNewItem = null;
+            this.bnvMembro.CountItem = this.BindingNavigatorCountItem;
+            this.bnvMembro.CountItemFormat = "de {0}";
+            this.bnvMembro.DeleteItem = null;
+            this.bnvMembro.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.bnvMembro.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.BindingNavigatorMoveFirstItem,
             this.BindingNavigatorMovePreviousItem,
             this.BindingNavigatorSeparator,
@@ -203,16 +205,17 @@
             this.btnAlterar,
             this.btnCancelar,
             this.btnSair});
-            this.bnvTipoDespesa.Location = new System.Drawing.Point(0, 0);
-            this.bnvTipoDespesa.MoveFirstItem = this.BindingNavigatorMoveFirstItem;
-            this.bnvTipoDespesa.MoveLastItem = this.BindingNavigatorMoveLastItem;
-            this.bnvTipoDespesa.MoveNextItem = this.BindingNavigatorMoveNextItem;
-            this.bnvTipoDespesa.MovePreviousItem = this.BindingNavigatorMovePreviousItem;
-            this.bnvTipoDespesa.Name = "bnvTipoDespesa";
-            this.bnvTipoDespesa.PositionItem = this.BindingNavigatorPositionItem;
-            this.bnvTipoDespesa.Size = new System.Drawing.Size(359, 31);
-            this.bnvTipoDespesa.TabIndex = 3;
-            this.bnvTipoDespesa.Text = "bnvTipoDespesa";
+            this.bnvMembro.Location = new System.Drawing.Point(0, 0);
+            this.bnvMembro.MoveFirstItem = this.BindingNavigatorMoveFirstItem;
+            this.bnvMembro.MoveLastItem = this.BindingNavigatorMoveLastItem;
+            this.bnvMembro.MoveNextItem = this.BindingNavigatorMoveNextItem;
+            this.bnvMembro.MovePreviousItem = this.BindingNavigatorMovePreviousItem;
+            this.bnvMembro.Name = "bnvMembro";
+            this.bnvMembro.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.bnvMembro.PositionItem = this.BindingNavigatorPositionItem;
+            this.bnvMembro.Size = new System.Drawing.Size(719, 39);
+            this.bnvMembro.TabIndex = 3;
+            this.bnvMembro.Text = "bnvCidade";
             // 
             // btnCancelar
             // 
@@ -221,114 +224,143 @@
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(28, 28);
+            this.btnCancelar.Size = new System.Drawing.Size(28, 36);
             this.btnCancelar.Text = "Cancelar Alteração";
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // txtNomeTipoDespesa
+            // txtNome
             // 
-            this.txtNomeTipoDespesa.Enabled = false;
-            this.txtNomeTipoDespesa.Location = new System.Drawing.Point(131, 75);
-            this.txtNomeTipoDespesa.Name = "txtNomeTipoDespesa";
-            this.txtNomeTipoDespesa.Size = new System.Drawing.Size(121, 20);
-            this.txtNomeTipoDespesa.TabIndex = 2;
+            this.txtNome.Enabled = false;
+            this.txtNome.Location = new System.Drawing.Point(261, 144);
+            this.txtNome.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(239, 31);
+            this.txtNome.TabIndex = 2;
             // 
             // txtId
             // 
             this.txtId.Enabled = false;
-            this.txtId.Location = new System.Drawing.Point(131, 41);
+            this.txtId.Location = new System.Drawing.Point(261, 79);
+            this.txtId.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(121, 20);
+            this.txtId.Size = new System.Drawing.Size(239, 31);
             this.txtId.TabIndex = 1;
             // 
-            // lblNomeTipoDespesa
+            // lblPapel
             // 
-            this.lblNomeTipoDespesa.AutoSize = true;
-            this.lblNomeTipoDespesa.Location = new System.Drawing.Point(25, 77);
-            this.lblNomeTipoDespesa.Name = "lblNomeTipoDespesa";
-            this.lblNomeTipoDespesa.Size = new System.Drawing.Size(95, 13);
-            this.lblNomeTipoDespesa.TabIndex = 1;
-            this.lblNomeTipoDespesa.Text = "Nome da Despesa";
+            this.lblPapel.AutoSize = true;
+            this.lblPapel.Location = new System.Drawing.Point(51, 211);
+            this.lblPapel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblPapel.Name = "lblPapel";
+            this.lblPapel.Size = new System.Drawing.Size(67, 25);
+            this.lblPapel.TabIndex = 2;
+            this.lblPapel.Text = "Papel";
+            // 
+            // lblNome
+            // 
+            this.lblNome.AutoSize = true;
+            this.lblNome.Location = new System.Drawing.Point(51, 148);
+            this.lblNome.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(68, 25);
+            this.lblNome.TabIndex = 1;
+            this.lblNome.Text = "Nome";
             // 
             // lblId
             // 
             this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(25, 43);
+            this.lblId.Location = new System.Drawing.Point(51, 82);
+            this.lblId.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(18, 13);
+            this.lblId.Size = new System.Drawing.Size(32, 25);
             this.lblId.TabIndex = 0;
             this.lblId.Text = "ID";
             // 
             // Dados
             // 
-            this.Dados.Controls.Add(this.dgvTipoDespesa);
-            this.Dados.Location = new System.Drawing.Point(4, 22);
+            this.Dados.Controls.Add(this.dgvMembro);
+            this.Dados.Location = new System.Drawing.Point(8, 39);
+            this.Dados.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Dados.Name = "Dados";
-            this.Dados.Padding = new System.Windows.Forms.Padding(3);
-            this.Dados.Size = new System.Drawing.Size(348, 200);
+            this.Dados.Padding = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.Dados.Size = new System.Drawing.Size(696, 387);
             this.Dados.TabIndex = 0;
             this.Dados.Text = "Dados";
             this.Dados.UseVisualStyleBackColor = true;
             // 
-            // dgvTipoDespesa
+            // dgvMembro
             // 
-            this.dgvTipoDespesa.AllowUserToAddRows = false;
-            this.dgvTipoDespesa.AllowUserToDeleteRows = false;
-            this.dgvTipoDespesa.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvMembro.AllowUserToAddRows = false;
+            this.dgvMembro.AllowUserToDeleteRows = false;
+            this.dgvMembro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvTipoDespesa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTipoDespesa.Location = new System.Drawing.Point(0, 3);
-            this.dgvTipoDespesa.MaximumSize = new System.Drawing.Size(346, 182);
-            this.dgvTipoDespesa.MinimumSize = new System.Drawing.Size(346, 182);
-            this.dgvTipoDespesa.Name = "dgvTipoDespesa";
-            this.dgvTipoDespesa.ReadOnly = true;
-            this.dgvTipoDespesa.Size = new System.Drawing.Size(346, 182);
-            this.dgvTipoDespesa.TabIndex = 0;
+            this.dgvMembro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMembro.Location = new System.Drawing.Point(0, 6);
+            this.dgvMembro.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.dgvMembro.MaximumSize = new System.Drawing.Size(692, 350);
+            this.dgvMembro.MinimumSize = new System.Drawing.Size(692, 350);
+            this.dgvMembro.Name = "dgvMembro";
+            this.dgvMembro.ReadOnly = true;
+            this.dgvMembro.Size = new System.Drawing.Size(692, 350);
+            this.dgvMembro.TabIndex = 0;
             // 
             // Detalhes
             // 
-            this.Detalhes.Controls.Add(this.txtNomeTipoDespesa);
+            this.Detalhes.Controls.Add(this.txtPapel);
+            this.Detalhes.Controls.Add(this.txtNome);
             this.Detalhes.Controls.Add(this.txtId);
-            this.Detalhes.Controls.Add(this.lblNomeTipoDespesa);
+            this.Detalhes.Controls.Add(this.lblPapel);
+            this.Detalhes.Controls.Add(this.lblNome);
             this.Detalhes.Controls.Add(this.lblId);
-            this.Detalhes.Location = new System.Drawing.Point(4, 22);
+            this.Detalhes.Location = new System.Drawing.Point(8, 39);
+            this.Detalhes.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Detalhes.Name = "Detalhes";
-            this.Detalhes.Padding = new System.Windows.Forms.Padding(3);
-            this.Detalhes.Size = new System.Drawing.Size(348, 200);
+            this.Detalhes.Padding = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.Detalhes.Size = new System.Drawing.Size(696, 387);
             this.Detalhes.TabIndex = 1;
             this.Detalhes.Text = "Detalhes";
             this.Detalhes.UseVisualStyleBackColor = true;
             // 
-            // tbTipoDespesa
+            // tbMembro
             // 
-            this.tbTipoDespesa.Controls.Add(this.Dados);
-            this.tbTipoDespesa.Controls.Add(this.Detalhes);
-            this.tbTipoDespesa.Location = new System.Drawing.Point(-1, 51);
-            this.tbTipoDespesa.Name = "tbTipoDespesa";
-            this.tbTipoDespesa.SelectedIndex = 0;
-            this.tbTipoDespesa.Size = new System.Drawing.Size(356, 226);
-            this.tbTipoDespesa.TabIndex = 2;
+            this.tbMembro.Controls.Add(this.Dados);
+            this.tbMembro.Controls.Add(this.Detalhes);
+            this.tbMembro.Location = new System.Drawing.Point(-3, 98);
+            this.tbMembro.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.tbMembro.Name = "tbMembro";
+            this.tbMembro.SelectedIndex = 0;
+            this.tbMembro.Size = new System.Drawing.Size(712, 434);
+            this.tbMembro.TabIndex = 2;
             // 
-            // frmTipoDespesa
+            // txtPapel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.txtPapel.Enabled = false;
+            this.txtPapel.Location = new System.Drawing.Point(262, 208);
+            this.txtPapel.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.txtPapel.Name = "txtPapel";
+            this.txtPapel.Size = new System.Drawing.Size(239, 31);
+            this.txtPapel.TabIndex = 3;
+            // 
+            // frmMembro
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(359, 278);
-            this.Controls.Add(this.bnvTipoDespesa);
-            this.Controls.Add(this.tbTipoDespesa);
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "frmTipoDespesa";
-            this.Text = "Tipos de Despesa";
-            this.Load += new System.EventHandler(this.frmTipoDespesa_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.bnvTipoDespesa)).EndInit();
-            this.bnvTipoDespesa.ResumeLayout(false);
-            this.bnvTipoDespesa.PerformLayout();
+            this.ClientSize = new System.Drawing.Size(719, 534);
+            this.Controls.Add(this.bnvMembro);
+            this.Controls.Add(this.tbMembro);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "frmMembro";
+            this.Text = "Membros";
+            this.Load += new System.EventHandler(this.frmMembro_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.bnvMembro)).EndInit();
+            this.bnvMembro.ResumeLayout(false);
+            this.bnvMembro.PerformLayout();
             this.Dados.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTipoDespesa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMembro)).EndInit();
             this.Detalhes.ResumeLayout(false);
             this.Detalhes.PerformLayout();
-            this.tbTipoDespesa.ResumeLayout(false);
+            this.tbMembro.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -350,15 +382,17 @@
         internal System.Windows.Forms.ToolStripButton BindingNavigatorMovePreviousItem;
         internal System.Windows.Forms.ToolStripButton BindingNavigatorMoveFirstItem;
         internal System.Windows.Forms.ToolStripLabel BindingNavigatorCountItem;
-        internal System.Windows.Forms.BindingNavigator bnvTipoDespesa;
+        internal System.Windows.Forms.BindingNavigator bnvMembro;
         internal System.Windows.Forms.ToolStripButton btnCancelar;
-        internal System.Windows.Forms.TextBox txtNomeTipoDespesa;
+        internal System.Windows.Forms.TextBox txtNome;
         internal System.Windows.Forms.TextBox txtId;
-        internal System.Windows.Forms.Label lblNomeTipoDespesa;
+        internal System.Windows.Forms.Label lblPapel;
+        internal System.Windows.Forms.Label lblNome;
         internal System.Windows.Forms.Label lblId;
         internal System.Windows.Forms.TabPage Dados;
-        internal System.Windows.Forms.DataGridView dgvTipoDespesa;
+        internal System.Windows.Forms.DataGridView dgvMembro;
         internal System.Windows.Forms.TabPage Detalhes;
-        internal System.Windows.Forms.TabControl tbTipoDespesa;
+        internal System.Windows.Forms.TabControl tbMembro;
+        internal System.Windows.Forms.TextBox txtPapel;
     }
 }
