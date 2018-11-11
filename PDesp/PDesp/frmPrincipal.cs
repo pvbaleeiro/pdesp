@@ -55,5 +55,13 @@ namespace PDesp
             frmM.WindowState = FormWindowState.Maximized;
             frmM.Show();
         }
+
+        private void despesasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDespesa frmD = new frmDespesa();
+            frmD.MdiParent = this;
+            frmD.WindowState = FormWindowState.Maximized;
+            frmD.Show();
+        }
     }
 }

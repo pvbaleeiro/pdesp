@@ -31,10 +31,10 @@
             this.mstrPrincipal = new System.Windows.Forms.MenuStrip();
             this.cadastrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tiposDeDespesaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.membrosDaFamíliaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.despesasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.membrosDaFamíliaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mstrPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,11 +70,19 @@
             this.tiposDeDespesaToolStripMenuItem.Text = "Tipos de Despesa";
             this.tiposDeDespesaToolStripMenuItem.Click += new System.EventHandler(this.tiposDeDespesaToolStripMenuItem_Click);
             // 
+            // membrosDaFamíliaToolStripMenuItem
+            // 
+            this.membrosDaFamíliaToolStripMenuItem.Name = "membrosDaFamíliaToolStripMenuItem";
+            this.membrosDaFamíliaToolStripMenuItem.Size = new System.Drawing.Size(330, 38);
+            this.membrosDaFamíliaToolStripMenuItem.Text = "Membros da Família";
+            this.membrosDaFamíliaToolStripMenuItem.Click += new System.EventHandler(this.membrosDaFamíliaToolStripMenuItem_Click);
+            // 
             // despesasToolStripMenuItem
             // 
             this.despesasToolStripMenuItem.Name = "despesasToolStripMenuItem";
             this.despesasToolStripMenuItem.Size = new System.Drawing.Size(126, 38);
             this.despesasToolStripMenuItem.Text = "Despesas";
+            this.despesasToolStripMenuItem.Click += new System.EventHandler(this.despesasToolStripMenuItem_Click);
             // 
             // sobreToolStripMenuItem
             // 
@@ -88,13 +96,6 @@
             this.sairToolStripMenuItem.Size = new System.Drawing.Size(66, 38);
             this.sairToolStripMenuItem.Text = "Sair";
             // 
-            // membrosDaFamíliaToolStripMenuItem
-            // 
-            this.membrosDaFamíliaToolStripMenuItem.Name = "membrosDaFamíliaToolStripMenuItem";
-            this.membrosDaFamíliaToolStripMenuItem.Size = new System.Drawing.Size(330, 38);
-            this.membrosDaFamíliaToolStripMenuItem.Text = "Membros da Família";
-            this.membrosDaFamíliaToolStripMenuItem.Click += new System.EventHandler(this.membrosDaFamíliaToolStripMenuItem_Click);
-            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -103,7 +104,7 @@
             this.Controls.Add(this.mstrPrincipal);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.mstrPrincipal;
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "frmPrincipal";
             this.Text = "Controle das Despesas";
             this.Load += new System.EventHandler(this.frmPrincipal_Load);

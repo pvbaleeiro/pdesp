@@ -28,3 +28,4 @@ C:\Users\victorbaleeiro\Documents\pdesp\PDesp\PDesp\obj\Debug\PDesp.frmPrincipal
 C:\Users\victorbaleeiro\Documents\pdesp\PDesp\PDesp\obj\Debug\PDesp.Properties.Resources.resources
 C:\Users\victorbaleeiro\Documents\pdesp\PDesp\PDesp\obj\Debug\PDesp.csproj.GenerateResource.Cache
 C:\Users\victorbaleeiro\Documents\pdesp\PDesp\PDesp\obj\Debug\PDesp.frmMembro.resources
+C:\Users\victorbaleeiro\Documents\pdesp\PDesp\PDesp\obj\Debug\PDesp.frmDespesa.resources
