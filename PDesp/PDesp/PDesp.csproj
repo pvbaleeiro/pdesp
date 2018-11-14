@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Despesa.cs" />
     <Compile Include="frmDespesa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -55,6 +56,12 @@
     </Compile>
     <Compile Include="frmMembro.designer.cs">
       <DependentUpon>frmMembro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSobre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSobre.Designer.cs">
+      <DependentUpon>frmSobre.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTipoDespesa.cs">
       <SubType>Form</SubType>
@@ -77,6 +84,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMembro.resx">
       <DependentUpon>frmMembro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSobre.resx">
+      <DependentUpon>frmSobre.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTipoDespesa.resx">
       <DependentUpon>frmTipoDespesa.cs</DependentUpon>

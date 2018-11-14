@@ -29,3 +29,16 @@ C:\Users\victorbaleeiro\Documents\pdesp\PDesp\PDesp\obj\Debug\PDesp.Properties.R
 C:\Users\victorbaleeiro\Documents\pdesp\PDesp\PDesp\obj\Debug\PDesp.csproj.GenerateResource.Cache
 C:\Users\victorbaleeiro\Documents\pdesp\PDesp\PDesp\obj\Debug\PDesp.frmMembro.resources
 C:\Users\victorbaleeiro\Documents\pdesp\PDesp\PDesp\obj\Debug\PDesp.frmDespesa.resources
+C:\Users\0030481813003\Documents\pdesp\PDesp\PDesp\bin\Debug\PDesp.exe.config
+C:\Users\0030481813003\Documents\pdesp\PDesp\PDesp\obj\Debug\PDesp.exe
+C:\Users\0030481813003\Documents\pdesp\PDesp\PDesp\obj\Debug\PDesp.pdb
+C:\Users\0030481813003\Documents\pdesp\PDesp\PDesp\bin\Debug\PDesp.exe
+C:\Users\0030481813003\Documents\pdesp\PDesp\PDesp\bin\Debug\PDesp.pdb
+C:\Users\0030481813003\Documents\pdesp\PDesp\PDesp\obj\Debug\PDesp.csprojResolveAssemblyReference.cache
+C:\Users\0030481813003\Documents\pdesp\PDesp\PDesp\obj\Debug\PDesp.frmDespesa.resources
+C:\Users\0030481813003\Documents\pdesp\PDesp\PDesp\obj\Debug\PDesp.frmMembro.resources
+C:\Users\0030481813003\Documents\pdesp\PDesp\PDesp\obj\Debug\PDesp.frmSobre.resources
+C:\Users\0030481813003\Documents\pdesp\PDesp\PDesp\obj\Debug\PDesp.frmTipoDespesa.resources
+C:\Users\0030481813003\Documents\pdesp\PDesp\PDesp\obj\Debug\PDesp.frmPrincipal.resources
+C:\Users\0030481813003\Documents\pdesp\PDesp\PDesp\obj\Debug\PDesp.Properties.Resources.resources
+C:\Users\0030481813003\Documents\pdesp\PDesp\PDesp\obj\Debug\PDesp.csproj.GenerateResource.Cache

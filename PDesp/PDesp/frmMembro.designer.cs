@@ -54,8 +54,8 @@
             this.Dados = new System.Windows.Forms.TabPage();
             this.dgvMembro = new System.Windows.Forms.DataGridView();
             this.Detalhes = new System.Windows.Forms.TabPage();
-            this.tbMembro = new System.Windows.Forms.TabControl();
             this.txtPapel = new System.Windows.Forms.TextBox();
+            this.tbMembro = new System.Windows.Forms.TabControl();
             ((System.ComponentModel.ISupportInitialize)(this.bnvMembro)).BeginInit();
             this.bnvMembro.SuspendLayout();
             this.Dados.SuspendLayout();
@@ -70,7 +70,7 @@
             this.btnSair.Image = ((System.Drawing.Image)(resources.GetObject("btnSair.Image")));
             this.btnSair.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(28, 36);
+            this.btnSair.Size = new System.Drawing.Size(28, 28);
             this.btnSair.Text = "Sair";
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
@@ -80,7 +80,7 @@
             this.btnAlterar.Image = ((System.Drawing.Image)(resources.GetObject("btnAlterar.Image")));
             this.btnAlterar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(28, 36);
+            this.btnAlterar.Size = new System.Drawing.Size(28, 28);
             this.btnAlterar.Text = "Alterar Registro";
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
@@ -91,7 +91,7 @@
             this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
             this.btnSalvar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(28, 36);
+            this.btnSalvar.Size = new System.Drawing.Size(28, 28);
             this.btnSalvar.Text = "Salvar Registros";
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
@@ -101,7 +101,7 @@
             this.btnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluir.Image")));
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.RightToLeftAutoMirrorImage = true;
-            this.btnExcluir.Size = new System.Drawing.Size(28, 36);
+            this.btnExcluir.Size = new System.Drawing.Size(28, 28);
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
@@ -111,14 +111,14 @@
             this.btnNovoRegistro.Image = ((System.Drawing.Image)(resources.GetObject("btnNovoRegistro.Image")));
             this.btnNovoRegistro.Name = "btnNovoRegistro";
             this.btnNovoRegistro.RightToLeftAutoMirrorImage = true;
-            this.btnNovoRegistro.Size = new System.Drawing.Size(28, 36);
+            this.btnNovoRegistro.Size = new System.Drawing.Size(28, 28);
             this.btnNovoRegistro.Text = "Adicionar Novo Registro";
             this.btnNovoRegistro.Click += new System.EventHandler(this.btnNovoRegistro_Click);
             // 
             // BindingNavigatorSeparator2
             // 
             this.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2";
-            this.BindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 39);
+            this.BindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 31);
             // 
             // BindingNavigatorMoveLastItem
             // 
@@ -126,7 +126,7 @@
             this.BindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("BindingNavigatorMoveLastItem.Image")));
             this.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem";
             this.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.BindingNavigatorMoveLastItem.Size = new System.Drawing.Size(28, 36);
+            this.BindingNavigatorMoveLastItem.Size = new System.Drawing.Size(28, 28);
             this.BindingNavigatorMoveLastItem.Text = "Último Registro";
             // 
             // BindingNavigatorMoveNextItem
@@ -135,27 +135,27 @@
             this.BindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("BindingNavigatorMoveNextItem.Image")));
             this.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem";
             this.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.BindingNavigatorMoveNextItem.Size = new System.Drawing.Size(28, 36);
+            this.BindingNavigatorMoveNextItem.Size = new System.Drawing.Size(28, 28);
             this.BindingNavigatorMoveNextItem.Text = "Próximo registro";
             // 
             // BindingNavigatorSeparator1
             // 
             this.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1";
-            this.BindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 39);
+            this.BindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 31);
             // 
             // BindingNavigatorPositionItem
             // 
             this.BindingNavigatorPositionItem.AccessibleName = "Position";
             this.BindingNavigatorPositionItem.AutoSize = false;
             this.BindingNavigatorPositionItem.Name = "BindingNavigatorPositionItem";
-            this.BindingNavigatorPositionItem.Size = new System.Drawing.Size(96, 39);
+            this.BindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.BindingNavigatorPositionItem.Text = "0";
             this.BindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
             // BindingNavigatorSeparator
             // 
             this.BindingNavigatorSeparator.Name = "BindingNavigatorSeparator";
-            this.BindingNavigatorSeparator.Size = new System.Drawing.Size(6, 39);
+            this.BindingNavigatorSeparator.Size = new System.Drawing.Size(6, 31);
             // 
             // BindingNavigatorMovePreviousItem
             // 
@@ -163,7 +163,7 @@
             this.BindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("BindingNavigatorMovePreviousItem.Image")));
             this.BindingNavigatorMovePreviousItem.Name = "BindingNavigatorMovePreviousItem";
             this.BindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.BindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(28, 36);
+            this.BindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(28, 28);
             this.BindingNavigatorMovePreviousItem.Text = "Registro anterior";
             // 
             // BindingNavigatorMoveFirstItem
@@ -172,13 +172,13 @@
             this.BindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("BindingNavigatorMoveFirstItem.Image")));
             this.BindingNavigatorMoveFirstItem.Name = "BindingNavigatorMoveFirstItem";
             this.BindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.BindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(28, 36);
+            this.BindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(28, 28);
             this.BindingNavigatorMoveFirstItem.Text = "Primeiro registro";
             // 
             // BindingNavigatorCountItem
             // 
             this.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem";
-            this.BindingNavigatorCountItem.Size = new System.Drawing.Size(76, 36);
+            this.BindingNavigatorCountItem.Size = new System.Drawing.Size(37, 28);
             this.BindingNavigatorCountItem.Text = "de {0}";
             this.BindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
@@ -211,9 +211,9 @@
             this.bnvMembro.MoveNextItem = this.BindingNavigatorMoveNextItem;
             this.bnvMembro.MovePreviousItem = this.BindingNavigatorMovePreviousItem;
             this.bnvMembro.Name = "bnvMembro";
-            this.bnvMembro.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.bnvMembro.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.bnvMembro.PositionItem = this.BindingNavigatorPositionItem;
-            this.bnvMembro.Size = new System.Drawing.Size(719, 39);
+            this.bnvMembro.Size = new System.Drawing.Size(428, 31);
             this.bnvMembro.TabIndex = 3;
             this.bnvMembro.Text = "bnvCidade";
             // 
@@ -224,66 +224,66 @@
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(28, 36);
+            this.btnCancelar.Size = new System.Drawing.Size(28, 28);
             this.btnCancelar.Text = "Cancelar Alteração";
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // txtNome
             // 
             this.txtNome.Enabled = false;
-            this.txtNome.Location = new System.Drawing.Point(261, 144);
-            this.txtNome.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.txtNome.Location = new System.Drawing.Point(130, 75);
+            this.txtNome.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(239, 31);
+            this.txtNome.Size = new System.Drawing.Size(122, 20);
             this.txtNome.TabIndex = 2;
             // 
             // txtId
             // 
             this.txtId.Enabled = false;
-            this.txtId.Location = new System.Drawing.Point(261, 79);
-            this.txtId.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.txtId.Location = new System.Drawing.Point(130, 41);
+            this.txtId.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(239, 31);
+            this.txtId.Size = new System.Drawing.Size(122, 20);
             this.txtId.TabIndex = 1;
             // 
             // lblPapel
             // 
             this.lblPapel.AutoSize = true;
-            this.lblPapel.Location = new System.Drawing.Point(51, 211);
-            this.lblPapel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblPapel.Location = new System.Drawing.Point(26, 110);
+            this.lblPapel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPapel.Name = "lblPapel";
-            this.lblPapel.Size = new System.Drawing.Size(67, 25);
+            this.lblPapel.Size = new System.Drawing.Size(34, 13);
             this.lblPapel.TabIndex = 2;
             this.lblPapel.Text = "Papel";
             // 
             // lblNome
             // 
             this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(51, 148);
-            this.lblNome.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblNome.Location = new System.Drawing.Point(26, 77);
+            this.lblNome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(68, 25);
+            this.lblNome.Size = new System.Drawing.Size(35, 13);
             this.lblNome.TabIndex = 1;
             this.lblNome.Text = "Nome";
             // 
             // lblId
             // 
             this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(51, 82);
-            this.lblId.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblId.Location = new System.Drawing.Point(26, 43);
+            this.lblId.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(32, 25);
+            this.lblId.Size = new System.Drawing.Size(18, 13);
             this.lblId.TabIndex = 0;
             this.lblId.Text = "ID";
             // 
             // Dados
             // 
             this.Dados.Controls.Add(this.dgvMembro);
-            this.Dados.Location = new System.Drawing.Point(8, 39);
-            this.Dados.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.Dados.Location = new System.Drawing.Point(4, 22);
+            this.Dados.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Dados.Name = "Dados";
-            this.Dados.Padding = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.Dados.Size = new System.Drawing.Size(696, 387);
+            this.Dados.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.Dados.Size = new System.Drawing.Size(348, 200);
             this.Dados.TabIndex = 0;
             this.Dados.Text = "Dados";
             this.Dados.UseVisualStyleBackColor = true;
@@ -296,13 +296,13 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvMembro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMembro.Location = new System.Drawing.Point(0, 6);
-            this.dgvMembro.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.dgvMembro.MaximumSize = new System.Drawing.Size(692, 350);
-            this.dgvMembro.MinimumSize = new System.Drawing.Size(692, 350);
+            this.dgvMembro.Location = new System.Drawing.Point(0, 3);
+            this.dgvMembro.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.dgvMembro.MaximumSize = new System.Drawing.Size(346, 182);
+            this.dgvMembro.MinimumSize = new System.Drawing.Size(346, 182);
             this.dgvMembro.Name = "dgvMembro";
             this.dgvMembro.ReadOnly = true;
-            this.dgvMembro.Size = new System.Drawing.Size(692, 350);
+            this.dgvMembro.Size = new System.Drawing.Size(346, 182);
             this.dgvMembro.TabIndex = 0;
             // 
             // Detalhes
@@ -313,43 +313,43 @@
             this.Detalhes.Controls.Add(this.lblPapel);
             this.Detalhes.Controls.Add(this.lblNome);
             this.Detalhes.Controls.Add(this.lblId);
-            this.Detalhes.Location = new System.Drawing.Point(8, 39);
-            this.Detalhes.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.Detalhes.Location = new System.Drawing.Point(4, 22);
+            this.Detalhes.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Detalhes.Name = "Detalhes";
-            this.Detalhes.Padding = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.Detalhes.Size = new System.Drawing.Size(696, 387);
+            this.Detalhes.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.Detalhes.Size = new System.Drawing.Size(348, 200);
             this.Detalhes.TabIndex = 1;
             this.Detalhes.Text = "Detalhes";
             this.Detalhes.UseVisualStyleBackColor = true;
+            // 
+            // txtPapel
+            // 
+            this.txtPapel.Enabled = false;
+            this.txtPapel.Location = new System.Drawing.Point(131, 108);
+            this.txtPapel.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.txtPapel.Name = "txtPapel";
+            this.txtPapel.Size = new System.Drawing.Size(122, 20);
+            this.txtPapel.TabIndex = 3;
             // 
             // tbMembro
             // 
             this.tbMembro.Controls.Add(this.Dados);
             this.tbMembro.Controls.Add(this.Detalhes);
-            this.tbMembro.Location = new System.Drawing.Point(-3, 98);
-            this.tbMembro.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.tbMembro.Location = new System.Drawing.Point(-2, 51);
+            this.tbMembro.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbMembro.Name = "tbMembro";
             this.tbMembro.SelectedIndex = 0;
-            this.tbMembro.Size = new System.Drawing.Size(712, 434);
+            this.tbMembro.Size = new System.Drawing.Size(356, 226);
             this.tbMembro.TabIndex = 2;
-            // 
-            // txtPapel
-            // 
-            this.txtPapel.Enabled = false;
-            this.txtPapel.Location = new System.Drawing.Point(262, 208);
-            this.txtPapel.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.txtPapel.Name = "txtPapel";
-            this.txtPapel.Size = new System.Drawing.Size(239, 31);
-            this.txtPapel.TabIndex = 3;
             // 
             // frmMembro
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(719, 534);
+            this.ClientSize = new System.Drawing.Size(428, 278);
             this.Controls.Add(this.bnvMembro);
             this.Controls.Add(this.tbMembro);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmMembro";
             this.Text = "Membros";
             this.Load += new System.EventHandler(this.frmMembro_Load);

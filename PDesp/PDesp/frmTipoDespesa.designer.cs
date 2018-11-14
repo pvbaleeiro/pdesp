@@ -210,7 +210,7 @@
             this.bnvTipoDespesa.MovePreviousItem = this.BindingNavigatorMovePreviousItem;
             this.bnvTipoDespesa.Name = "bnvTipoDespesa";
             this.bnvTipoDespesa.PositionItem = this.BindingNavigatorPositionItem;
-            this.bnvTipoDespesa.Size = new System.Drawing.Size(359, 31);
+            this.bnvTipoDespesa.Size = new System.Drawing.Size(413, 31);
             this.bnvTipoDespesa.TabIndex = 3;
             this.bnvTipoDespesa.Text = "bnvTipoDespesa";
             // 
@@ -314,7 +314,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(359, 278);
+            this.ClientSize = new System.Drawing.Size(413, 278);
             this.Controls.Add(this.bnvTipoDespesa);
             this.Controls.Add(this.tbTipoDespesa);
             this.Margin = new System.Windows.Forms.Padding(2);
