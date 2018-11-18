@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -21,6 +22,7 @@ namespace PDesp
         public frmDespesa()
         {
             InitializeComponent();
+            AplicarEventos(txtValorDespesa);
         }
 
         private void frmDespesa_Load(object sender, EventArgs e)
@@ -33,15 +35,14 @@ namespace PDesp
                 dgvDespesa.DataSource = bnDespesa;
                 bnvDespesa.BindingSource = bnDespesa;
 
-
-                //txtId.DataBindings.Add("TEXT", bnTipoDespesa, "ID_TIPODESPESA");
-                //txtNomeTipoDespesa.DataBindings.Add("TEXT", bnTipoDespesa, "NOME_TIPODESPESA");
-                dgvDespesa.Columns[0].HeaderText = "ID";
-                dgvDespesa.Columns[1].HeaderText = "Nome";
-                dgvDespesa.Columns[2].HeaderText = "ID Membro";
-                dgvDespesa.Columns[3].HeaderText = "Data";
-                dgvDespesa.Columns[4].HeaderText = "Valor";
-                dgvDespesa.Columns[5].HeaderText = "Observações";
+                if (dgvDespesa.Columns.Count > 0) {
+                    dgvDespesa.Columns[0].HeaderText = "ID";
+                    dgvDespesa.Columns[1].HeaderText = "Nome";
+                    dgvDespesa.Columns[2].HeaderText = "ID Membro";
+                    dgvDespesa.Columns[3].HeaderText = "Data";
+                    dgvDespesa.Columns[4].HeaderText = "Valor";
+                    dgvDespesa.Columns[5].HeaderText = "Observações";
+                }
 
                 // Carregando drop down list de tipos despesa e membros
                 TipoDespesa tipoDespesa = new TipoDespesa();
@@ -55,6 +56,11 @@ namespace PDesp
                 cbxMembro.DisplayMember = "NOME_MEMBRO";
                 cbxMembro.ValueMember = "NOME_MEMBRO";
                 cbxMembro.DataSource = dsMembro.Tables["MEMBRO"];
+
+                txtId.DataBindings.Add("TEXT", bnDespesa, "ID_DESPESA");
+                txtValorDespesa.DataBindings.Add("TEXT", bnDespesa, "VALOR_DESPESA");
+                txtObservacao.DataBindings.Add("TEXT", bnDespesa, "OBS_DESPESA");
+                mskData.DataBindings.Add("TEXT", bnDespesa, "DATA_DESPESA");
             }
             catch (Exception ex)
             {
@@ -75,8 +81,13 @@ namespace PDesp
             }
 
             bnDespesa.AddNew();
-            mtxtValor.Enabled = true;
-            mtxtValor.Focus();
+            cbxMembro.Enabled = true;
+            cbxTipoDespesa.Enabled = true;
+            txtValorDespesa.Enabled = true;
+            txtValorDespesa.Focus();
+            aplicaMascara(txtValorDespesa);
+            txtValorDespesa.DataBindings.Clear();
+            mskData.Enabled = true;
             txtObservacao.Enabled = true;
             Despesa despesa = new Despesa();
             txtId.Text = despesa.NextIdentifier().ToString();
@@ -85,7 +96,6 @@ namespace PDesp
             btnNovoRegistro.Enabled = false;
             btnExcluir.Enabled = false;
             btnCancelar.Enabled = true;
-
             bInclusao = true;
         }
 
@@ -184,8 +194,6 @@ namespace PDesp
             //}
         }
 
-
-
         private void btnAlterar_Click(object sender, EventArgs e)
         {
             //if (tbMembro.SelectedIndex == 0)
@@ -223,7 +231,118 @@ namespace PDesp
 
         private void bnvDespesa_RefreshItems(object sender, EventArgs e)
         {
+            resolveMudancasComboBox();
+        }
 
+        private void dgvDespesa_BindingContextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void resolveMudancasComboBox()
+        {
+            if (dgvDespesa.SelectedCells.Count > 0)
+            {
+                DataGridViewRow row = dgvDespesa.Rows[dgvDespesa.SelectedCells[0].RowIndex].Cells[0].OwningRow;
+                int idTipoDespesa = (int)row.Cells["TIPODESPESA_ID_TIPODESPESA"].Value;
+                int idMembro = (int)row.Cells["MEMBRO_ID_MEMBRO"].Value;
+
+                foreach (DataTable table in dsTipoDespesa.Tables)
+                {
+                    foreach (DataRow dr in table.Rows)
+                    {
+                        int idTipoDespesaComboBox = (int)dr["ID_TIPODESPESA"];
+                        if (idTipoDespesa == idTipoDespesaComboBox)
+                        {
+                            string nomeTipoDespesa = (string)dr["NOME_TIPODESPESA"];
+                            cbxTipoDespesa.SelectedIndex = cbxTipoDespesa.FindStringExact(nomeTipoDespesa);
+                            break;
+                        }
+                    }
+                }
+
+                foreach (DataTable table in dsMembro.Tables)
+                {
+                    foreach (DataRow dr in table.Rows)
+                    {
+                        int idMembroComboBox = (int)dr["ID_MEMBRO"];
+                        if (idMembro == idMembroComboBox)
+                        {
+                            string nomeMembro = (string)dr["NOME_MEMBRO"];
+                            cbxMembro.SelectedIndex = cbxMembro.FindStringExact(nomeMembro);
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        private void KeyUpValor(object sender, EventArgs e)
+        {
+            TextBox txt = (TextBox)sender;
+            aplicaMascara(txt);
+        }
+
+        private void LeaveValor(object sender, EventArgs e)
+        {
+            TextBox txt = (TextBox)sender;
+            aplicaMascara(txt);
+        }
+
+        private void KeyPressValor(object sender, KeyPressEventArgs e)
+        {
+            TextBox txt = (TextBox)sender;
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != Convert.ToChar(Keys.Back))
+            {
+                if (e.KeyChar == ',')
+                {
+                    e.Handled = (txt.Text.Contains(","));
+                }
+                else
+                    e.Handled = true;
+            }      
+        }
+
+        private void aplicaMascara(TextBox txt)
+        {
+            string valor = txt.Text.Replace("R$", "").Replace(",", "").Replace(" ", "").Replace("00,", "");
+            if (valor.Length == 0)
+            {
+                txt.Text = "0,00" + valor;
+            }
+            if (valor.Length == 1)
+            {
+                txt.Text = "0,0" + valor;
+            }
+            if (valor.Length == 2)
+            {
+                txt.Text = "0," + valor;
+            }
+            else if (valor.Length >= 3)
+            {
+                if (txt.Text.StartsWith("0,"))
+                {
+                    txt.Text = valor.Insert(valor.Length - 2, ",").Replace("0,", "");
+                }
+                else if (txt.Text.Contains("00,"))
+                {
+                    txt.Text = valor.Insert(valor.Length - 2, ",").Replace("00,", "");
+                }
+                else
+                {
+                    txt.Text = valor.Insert(valor.Length - 2, ",");
+                }
+            }
+
+            valor = txt.Text;
+            txt.Text = string.Format("{0:C}", Convert.ToDouble(valor));
+            txt.Select(txt.Text.Length, 0);
+        }
+
+        private void AplicarEventos(TextBox txt)
+        {
+            txt.KeyUp += KeyUpValor;
+            txt.Leave += LeaveValor;
+            txt.KeyPress += KeyPressValor;
         }
     }
 }
