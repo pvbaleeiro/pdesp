@@ -16,7 +16,14 @@ namespace PDesp
         private Membro membro;
         private DateTime dataDespesa;
         private String observacoes;
+        private Double valorDespesa;
 
+        /* Construtor */
+        public Despesa()
+        {
+            tipoDespesa = new TipoDespesa();
+            membro = new Membro();
+        }
 
         /* Getters e Setters */
         public int IdDespesa
@@ -42,7 +49,6 @@ namespace PDesp
             get { return dataDespesa; }
             set { dataDespesa = value; }
         }
-        private Double valorDespesa;
 
         public Double ValorDespesa
         {

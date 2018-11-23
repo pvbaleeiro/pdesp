@@ -42,3 +42,4 @@ C:\Users\victorbaleeiro\Documents\pdesp\PDesp\PDesp\obj\Debug\PDesp.csproj.Gener
 C:\Users\victorbaleeiro\Documents\pdesp\PDesp\PDesp\obj\Debug\PDesp.exe
 C:\Users\victorbaleeiro\Documents\pdesp\PDesp\PDesp\obj\Debug\PDesp.pdb
 C:\Users\victorbaleeiro\Documents\pdesp\PDesp\PDesp\bin\Debug\PDesp.pdb
+C:\Users\victorbaleeiro\Documents\pdesp\PDesp\PDesp\obj\Debug\PDesp.csprojResolveAssemblyReference.cache
