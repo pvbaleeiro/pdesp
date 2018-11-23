@@ -10,22 +10,24 @@ namespace PDesp
 {
     class Despesa
     {
-        /* Propriedades */
+        #region Propriedades
         private int idDespesa;
         private TipoDespesa tipoDespesa;
         private Membro membro;
         private DateTime dataDespesa;
         private String observacoes;
         private Double valorDespesa;
+        #endregion
 
-        /* Construtor */
+        #region Construtor
         public Despesa()
         {
             tipoDespesa = new TipoDespesa();
             membro = new Membro();
         }
+        #endregion
 
-        /* Getters e Setters */
+        #region Getters e Setters
         public int IdDespesa
         {
             get { return idDespesa; }
@@ -61,8 +63,9 @@ namespace PDesp
             get { return observacoes; }
             set { observacoes = value; }
         }
+        #endregion
 
-        /* Métodos */
+        #region CRUD
         public DataTable Listar()
         {
             SqlDataAdapter daDespesa;
@@ -175,26 +178,6 @@ namespace PDesp
 
             return nReg;
         }
-
-        public int NextIdentifier()
-        {
-            int nextIdentifier = 0;
-
-            try
-            {
-                SqlCommand mycommand;
-                mycommand = new SqlCommand("SELECT IDENT_CURRENT('DESPESA') + IDENT_INCR('DESPESA') AS NEXT_IDENTIFIER", frmPrincipal.conexao);
-
-                // Executando o commando e obtendo o resultado
-                nextIdentifier = Convert.ToInt32(mycommand.ExecuteScalar());
-            }
-
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-
-            return nextIdentifier;
-        }
+        #endregion
     }
 }

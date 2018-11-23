@@ -130,26 +130,5 @@ namespace PDesp
 
             return nReg;
         }
-
-        public int NextIdentifier()
-        {
-            int nextIdentifier = 0;
-
-            try
-            {
-                SqlCommand mycommand;
-                mycommand = new SqlCommand("SELECT IDENT_CURRENT('TIPODESPESA') + IDENT_INCR('TIPODESPESA') AS NEXT_IDENTIFIER", frmPrincipal.conexao);
-
-                // Executando o commando e obtendo o resultado
-                nextIdentifier = Convert.ToInt32(mycommand.ExecuteScalar());
-            }
-
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-
-            return nextIdentifier;
-        }
     }
 }

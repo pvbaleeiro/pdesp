@@ -20,11 +20,13 @@ namespace PDesp
         private DataSet dsTipoDespesa = new DataSet();
         private DataSet dsMembro = new DataSet();
 
+        #region Construtor
         public frmDespesa()
         {
             InitializeComponent();
             AplicarEventos(txtValorDespesa);
         }
+        #endregion
 
         private void frmDespesa_Load(object sender, EventArgs e)
         {
@@ -91,7 +93,7 @@ namespace PDesp
             mskData.Enabled = true;
             txtObservacao.Enabled = true;
             Despesa despesa = new Despesa();
-            txtId.Text = despesa.NextIdentifier().ToString();
+            txtId.Text = SQLUtil.Instance.NextIdentifier("DESPESA").ToString();
             btnSalvar.Enabled = true;
             btnAlterar.Enabled = false;
             btnNovoRegistro.Enabled = false;

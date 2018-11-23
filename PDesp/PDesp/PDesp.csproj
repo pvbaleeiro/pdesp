@@ -78,6 +78,7 @@
     <Compile Include="Membro.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SQLUtil.cs" />
     <Compile Include="TipoDespesa.cs" />
     <EmbeddedResource Include="frmDespesa.resx">
       <DependentUpon>frmDespesa.cs</DependentUpon>

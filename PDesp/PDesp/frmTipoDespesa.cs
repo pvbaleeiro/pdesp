@@ -55,7 +55,7 @@ namespace PDesp
             txtNomeTipoDespesa.Enabled = true;
             txtNomeTipoDespesa.Focus();
             TipoDespesa tipoDespesa = new TipoDespesa();
-            txtId.Text = tipoDespesa.NextIdentifier().ToString();
+            txtId.Text = SQLUtil.Instance.NextIdentifier("TIPODESPESA").ToString();
             btnSalvar.Enabled = true;
             btnAlterar.Enabled = false;
             btnNovoRegistro.Enabled = false;

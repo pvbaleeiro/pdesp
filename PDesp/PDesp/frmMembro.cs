@@ -58,7 +58,7 @@ namespace PDesp
             txtNome.Focus();
             txtPapel.Enabled = true;
             Membro membro = new Membro();
-            txtId.Text = membro.NextIdentifier().ToString();
+            txtId.Text = SQLUtil.Instance.NextIdentifier("MEMBRO").ToString();
             btnSalvar.Enabled = true;
             btnAlterar.Enabled = false;
             btnNovoRegistro.Enabled = false;
