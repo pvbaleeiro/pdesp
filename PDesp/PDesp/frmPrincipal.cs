@@ -25,9 +25,9 @@ namespace PDesp
         {
             try
             {
-                conexao = new SqlConnection("Data Source=DESKTOP-PKET4KJ;Initial Catalog=master;Integrated Security=True");
+                //conexao = new SqlConnection("Data Source=DESKTOP-PKET4KJ;Initial Catalog=master;Integrated Security=True");
                 //conexao = new SqlConnection("Data Source=PROFDENILCE"+"'\'"+"SQLEXPRESS;Initial Catalog=LP2;Integrated Security=True");
-                //conexao = new SqlConnection("Data Source=apolo;Initial Catalog=LP2;User ID=bd1813003;Password=060588Vi"); 
+                conexao = new SqlConnection("Data Source=apolo;Initial Catalog=LP2;User ID=bd1813003;Password=060588Vi"); 
                 conexao.Open();
             }
             catch (SqlException ex)
@@ -74,17 +74,24 @@ namespace PDesp
 
         private void despesasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (Application.OpenForms.OfType<frmDespesa>().Count() == 0)
+            if (SQLUtil.Instance.haMembrosETiposDespesas())
             {
-                frmDespesa frmD = new frmDespesa();
-                frmD.MdiParent = this;
-                frmD.WindowState = FormWindowState.Maximized;
-                frmD.Show();
+                if (Application.OpenForms.OfType<frmDespesa>().Count() == 0)
+                {
+                    frmDespesa frmD = new frmDespesa();
+                    frmD.MdiParent = this;
+                    frmD.WindowState = FormWindowState.Maximized;
+                    frmD.Show();
+                }
+                else
+                {
+                    frmDespesa frmD = Application.OpenForms.OfType<frmDespesa>().ElementAt(0);
+                    frmD.BringToFront();
+                }
             }
             else
             {
-                frmDespesa frmD = Application.OpenForms.OfType<frmDespesa>().ElementAt(0);
-                frmD.BringToFront();
+                MessageBox.Show("Para cadastrar uma despesa, você precisa ter pelo menos um Tipo de Despesa e um Membro adicionados!");
             }
         }
 

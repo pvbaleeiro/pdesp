@@ -28,6 +28,7 @@ namespace PDesp
         }
         #endregion
 
+        #region Load
         private void frmDespesa_Load(object sender, EventArgs e)
         {
             try
@@ -70,7 +71,9 @@ namespace PDesp
                 MessageBox.Show(ex.Message);
             }
         }
+        #endregion
 
+        #region Demais métodos
         private void Detalhes_Click(object sender, EventArgs e)
         {
 
@@ -145,9 +148,15 @@ namespace PDesp
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             // validar os dados
-            if (txtValorDespesa.Text == "" || txtObservacao.Text == "" || mskData.Text == "")
+            DateTime dataValida;
+            if (txtValorDespesa.Text == "" || txtObservacao.Text == "")
             {
                 MessageBox.Show("Todos os campos devem ser preenchidos!");
+            }
+            else if (!DateTime.TryParse(mskData.Text, out dataValida))
+            {
+                mskData.Focus();
+                MessageBox.Show("Insira uma data válida!");
             }
             else
             {
@@ -183,9 +192,9 @@ namespace PDesp
                     }
                 }
 
-                Double dValor = Double.Parse(txtValorDespesa.Text, NumberStyles.AllowCurrencySymbol | NumberStyles.AllowDecimalPoint | NumberStyles.AllowThousands, new CultureInfo("pt-BR"));
+                Double dValor = Double.Parse(txtValorDespesa.Text, NumberStyles.Currency);
                 regD.ValorDespesa = dValor;
-                regD.DataDespesa = Convert.ToDateTime(mskData.Text);
+                regD.DataDespesa = dataValida;
                 regD.Observacoes = txtObservacao.Text;
 
                 if (bInclusao)
@@ -226,6 +235,8 @@ namespace PDesp
                         cbxMembro.DisplayMember = "NOME_MEMBRO";
                         cbxMembro.ValueMember = "NOME_MEMBRO";
                         cbxMembro.DataSource = dsMembro.Tables["MEMBRO"];
+
+                        txtValorDespesa.DataBindings.Add("TEXT", bnDespesa, "VALOR_DESPESA");
                     }
                     else
                     {
@@ -333,39 +344,46 @@ namespace PDesp
         {
             if (dgvDespesa.SelectedCells.Count > 0)
             {
-                DataGridViewRow row = dgvDespesa.Rows[dgvDespesa.SelectedCells[0].RowIndex].Cells[0].OwningRow;
-                if (row.Cells["TIPODESPESA_ID_TIPODESPESA"].Value != null)
+                try
                 {
-                    int idTipoDespesa = (int)row.Cells["TIPODESPESA_ID_TIPODESPESA"].Value;
-                    int idMembro = (int)row.Cells["MEMBRO_ID_MEMBRO"].Value;
-
-                    foreach (DataTable table in dsTipoDespesa.Tables)
+                    DataGridViewRow row = dgvDespesa.Rows[dgvDespesa.SelectedCells[0].RowIndex].Cells[0].OwningRow;
+                    if (row.Cells["TIPODESPESA_ID_TIPODESPESA"].Value != null)
                     {
-                        foreach (DataRow dr in table.Rows)
+                        int idTipoDespesa = (int)row.Cells["TIPODESPESA_ID_TIPODESPESA"].Value;
+                        int idMembro = (int)row.Cells["MEMBRO_ID_MEMBRO"].Value;
+
+                        foreach (DataTable table in dsTipoDespesa.Tables)
                         {
-                            int idTipoDespesaComboBox = (int)dr["ID_TIPODESPESA"];
-                            if (idTipoDespesa == idTipoDespesaComboBox)
+                            foreach (DataRow dr in table.Rows)
                             {
-                                string nomeTipoDespesa = (string)dr["NOME_TIPODESPESA"];
-                                cbxTipoDespesa.SelectedIndex = cbxTipoDespesa.FindStringExact(nomeTipoDespesa);
-                                break;
+                                int idTipoDespesaComboBox = (int)dr["ID_TIPODESPESA"];
+                                if (idTipoDespesa == idTipoDespesaComboBox)
+                                {
+                                    string nomeTipoDespesa = (string)dr["NOME_TIPODESPESA"];
+                                    cbxTipoDespesa.SelectedIndex = cbxTipoDespesa.FindStringExact(nomeTipoDespesa);
+                                    break;
+                                }
+                            }
+                        }
+
+                        foreach (DataTable table in dsMembro.Tables)
+                        {
+                            foreach (DataRow dr in table.Rows)
+                            {
+                                int idMembroComboBox = (int)dr["ID_MEMBRO"];
+                                if (idMembro == idMembroComboBox)
+                                {
+                                    string nomeMembro = (string)dr["NOME_MEMBRO"];
+                                    cbxMembro.SelectedIndex = cbxMembro.FindStringExact(nomeMembro);
+                                    break;
+                                }
                             }
                         }
                     }
-
-                    foreach (DataTable table in dsMembro.Tables)
-                    {
-                        foreach (DataRow dr in table.Rows)
-                        {
-                            int idMembroComboBox = (int)dr["ID_MEMBRO"];
-                            if (idMembro == idMembroComboBox)
-                            {
-                                string nomeMembro = (string)dr["NOME_MEMBRO"];
-                                cbxMembro.SelectedIndex = cbxMembro.FindStringExact(nomeMembro);
-                                break;
-                            }
-                        }
-                    }
+                }
+                catch (Exception ex)
+                {
+                    /* Nada para fazer */
                 }
             }
         }
@@ -438,5 +456,6 @@ namespace PDesp
             //txt.Leave += LeaveValor;
             txt.KeyPress += KeyPressValor;
         }
+        #endregion
     }
 }

@@ -54,6 +54,32 @@ namespace PDesp
 
             return nextIdentifier;
         }
+
+        public bool haMembrosETiposDespesas()
+        {
+            int totalItens = 0;
+
+            try
+            {
+                SqlCommand mycommand;
+                mycommand = new SqlCommand("SELECT COUNT(*) FROM TIPODESPESA", frmPrincipal.conexao);
+
+                // Executando o commando e obtendo o resultado
+                totalItens = Convert.ToInt32(mycommand.ExecuteScalar()) > 1 ? 1 : 0;
+
+                mycommand = new SqlCommand("SELECT COUNT(*) FROM MEMBRO", frmPrincipal.conexao);
+
+                // Executando o commando e obtendo o resultado
+                totalItens += Convert.ToInt32(mycommand.ExecuteScalar()) > 1 ? 1 : 0;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return (totalItens > 1);
+        }
         #endregion
     }
 }
