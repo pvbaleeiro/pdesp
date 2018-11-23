@@ -42,26 +42,50 @@ namespace PDesp
 
         private void tiposDeDespesaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmTipoDespesa frmTD = new frmTipoDespesa();
-            frmTD.MdiParent = this;
-            frmTD.WindowState = FormWindowState.Maximized;
-            frmTD.Show();
+            if (Application.OpenForms.OfType<frmTipoDespesa>().Count() == 0)
+            {
+                frmTipoDespesa frmTD = new frmTipoDespesa();
+                frmTD.MdiParent = this;
+                frmTD.WindowState = FormWindowState.Maximized;
+                frmTD.Show();
+            }
+            else 
+            {
+                frmTipoDespesa frmTD = Application.OpenForms.OfType<frmTipoDespesa>().ElementAt(0);
+                frmTD.BringToFront();
+            }
         }
 
         private void membrosDaFamíliaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmMembro frmM = new frmMembro();
-            frmM.MdiParent = this;
-            frmM.WindowState = FormWindowState.Maximized;
-            frmM.Show();
+            if (Application.OpenForms.OfType<frmMembro>().Count() == 0)
+            {
+                frmMembro frmM = new frmMembro();
+                frmM.MdiParent = this;
+                frmM.WindowState = FormWindowState.Maximized;
+                frmM.Show();
+            }
+            else
+            {
+                frmMembro frmM = Application.OpenForms.OfType<frmMembro>().ElementAt(0);
+                frmM.BringToFront();
+            }
         }
 
         private void despesasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmDespesa frmD = new frmDespesa();
-            frmD.MdiParent = this;
-            frmD.WindowState = FormWindowState.Maximized;
-            frmD.Show();
+            if (Application.OpenForms.OfType<frmDespesa>().Count() == 0)
+            {
+                frmDespesa frmD = new frmDespesa();
+                frmD.MdiParent = this;
+                frmD.WindowState = FormWindowState.Maximized;
+                frmD.Show();
+            }
+            else
+            {
+                frmDespesa frmD = Application.OpenForms.OfType<frmDespesa>().ElementAt(0);
+                frmD.BringToFront();
+            }
         }
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
@@ -71,10 +95,18 @@ namespace PDesp
 
         private void sobreToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmSobre frmS = new frmSobre();
-            frmS.MdiParent = this;
-            frmS.WindowState = FormWindowState.Maximized;
-            frmS.Show();
+            if (Application.OpenForms.OfType<frmSobre>().Count() == 0)
+            {
+                frmSobre frmS = new frmSobre();
+                frmS.MdiParent = this;
+                frmS.WindowState = FormWindowState.Maximized;
+                frmS.Show();
+            }
+            else
+            {
+                frmSobre frmS = Application.OpenForms.OfType<frmSobre>().ElementAt(0);
+                frmS.BringToFront();
+            }
         }
 
         private void mstrPrincipal_ItemClicked(object sender, ToolStripItemClickedEventArgs e)

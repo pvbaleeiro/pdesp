@@ -117,15 +117,17 @@ namespace PDesp
                     MessageBox.Show("Despesa excluída com sucesso!");
                     dsDespesa.Tables.Clear();
                     dsDespesa.Tables.Add(regD.Listar());
-                    bnDespesa.DataSource = dsMembro.Tables["DESPESA"];
+                    bnDespesa.DataSource = dsDespesa.Tables["DESPESA"];
 
                     TipoDespesa tipoDespesa = new TipoDespesa();
+                    dsTipoDespesa.Tables.Clear();
                     dsTipoDespesa.Tables.Add(tipoDespesa.Listar());
                     cbxTipoDespesa.DisplayMember = "NOME_TIPODESPESA";
                     cbxTipoDespesa.ValueMember = "NOME_TIPODESPESA";
                     cbxTipoDespesa.DataSource = dsTipoDespesa.Tables["TIPODESPESA"];
 
                     Membro membro = new Membro();
+                    dsMembro.Tables.Clear();
                     dsMembro.Tables.Add(membro.Listar());
                     cbxMembro.DisplayMember = "NOME_MEMBRO";
                     cbxMembro.ValueMember = "NOME_MEMBRO";
@@ -194,6 +196,9 @@ namespace PDesp
                         txtId.Enabled = false;
                         cbxMembro.Enabled = false;
                         cbxTipoDespesa.Enabled = false;
+                        txtObservacao.Enabled = false;
+                        txtValorDespesa.Enabled = false;
+                        mskData.Enabled = false;
                         btnAlterar.Enabled = true;
                         btnNovoRegistro.Enabled = true;
                         btnExcluir.Enabled = true;
@@ -235,6 +240,9 @@ namespace PDesp
                         txtId.Enabled = false;
                         cbxMembro.Enabled = false;
                         cbxTipoDespesa.Enabled = false;
+                        mskData.Enabled = false;
+                        txtValorDespesa.Enabled = false;
+                        txtObservacao.Enabled = false;
                         btnAlterar.Enabled = true;
                         btnNovoRegistro.Enabled = true;
                         btnExcluir.Enabled = true;
@@ -245,15 +253,17 @@ namespace PDesp
                         // recarrega o grid
                         dsDespesa.Tables.Clear();
                         dsDespesa.Tables.Add(regD.Listar());
-                        bnDespesa.DataSource = dsMembro.Tables["DESPESA"];
+                        bnDespesa.DataSource = dsDespesa.Tables["DESPESA"];
 
                         TipoDespesa tipoDespesa = new TipoDespesa();
+                        dsTipoDespesa.Tables.Clear();
                         dsTipoDespesa.Tables.Add(tipoDespesa.Listar());
                         cbxTipoDespesa.DisplayMember = "NOME_TIPODESPESA";
                         cbxTipoDespesa.ValueMember = "NOME_TIPODESPESA";
                         cbxTipoDespesa.DataSource = dsTipoDespesa.Tables["TIPODESPESA"];
 
                         Membro membro = new Membro();
+                        dsMembro.Tables.Clear();
                         dsMembro.Tables.Add(membro.Listar());
                         cbxMembro.DisplayMember = "NOME_MEMBRO";
                         cbxMembro.ValueMember = "NOME_MEMBRO";
@@ -274,6 +284,9 @@ namespace PDesp
                 tbDespesa.SelectTab(1);
             }
 
+            cbxMembro.Enabled = true;
+            cbxTipoDespesa.Enabled = true;
+            mskData.Enabled = true;
             txtValorDespesa.Enabled = true;
             txtValorDespesa.Focus();
             txtObservacao.Enabled = true;
@@ -290,8 +303,11 @@ namespace PDesp
             bnDespesa.CancelEdit();
 
             btnSalvar.Enabled = false;
+            cbxTipoDespesa.Enabled = false;
+            cbxMembro.Enabled = false;
             txtObservacao.Enabled = false;
             mskData.Enabled = false;
+            txtValorDespesa.Enabled = false;
             btnAlterar.Enabled = true;
             btnNovoRegistro.Enabled = true;
             btnExcluir.Enabled = true;
@@ -417,7 +433,7 @@ namespace PDesp
         private void AplicarEventos(TextBox txt)
         {
             txt.KeyUp += KeyUpValor;
-            txt.Leave += LeaveValor;
+            //txt.Leave += LeaveValor;
             txt.KeyPress += KeyPressValor;
         }
     }

@@ -14,13 +14,25 @@ namespace PDesp
         public frmSobre()
         {
             InitializeComponent();
-            this.Text = String.Format("About {0}", AssemblyTitle);
-            this.labelProductName.Text = AssemblyProduct;
-            this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
-            this.labelCopyright.Text = AssemblyCopyright;
-            this.labelCompanyName.Text = AssemblyCompany;
-            this.textBoxDescription.Text = AssemblyDescription;
+            this.lblProjeto.Text = "Projeto: " + AssemblyProduct;
+            this.lblVersao.Text = String.Format("Versão: {0}", AssemblyVersion);
+            this.lblCopyright.Text = AssemblyCopyright;
+            this.llblGithub.Text = "Acesse: " + AssemblyCompany;
+            this.llblGithub.LinkArea = new LinkArea(8, AssemblyCompany.Length); 
+            this.txtbxDescription.AppendText("Este é o projeto final da matéria LP2." + Environment.NewLine);
+            this.txtbxDescription.AppendText("Profª Mª Denilce Veloso" + Environment.NewLine);
+            this.txtbxDescription.AppendText("Desenvolvido por: Victor Baleeiro RA: 0030481813003" + Environment.NewLine);
         }
+
+        private void VisitLink()
+        {
+            // Change the color of the link text by setting LinkVisited   
+            // to true.  
+            this.llblGithub.LinkVisited = true;
+            //Call the Process.Start method to open the default browser   
+            //with a URL:  
+            System.Diagnostics.Process.Start(AssemblyCompany);
+        }  
 
         private void labelProductName_Click(object sender, EventArgs e)
         {
@@ -111,5 +123,22 @@ namespace PDesp
             }
         }
         #endregion
+
+        private void frmSobre_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void llblGithub_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
+            {
+                VisitLink();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Não foi possível abrir o link.");
+            } 
+        }
     }
 }
